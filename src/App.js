@@ -1,9 +1,10 @@
 import './App.css';
+import Hompage from './pages/hompage';
 
 function App() {
   return (
     <div className="App">
-      <h1>E com</h1>
+      <Hompage/>
     </div>
   );
 }
