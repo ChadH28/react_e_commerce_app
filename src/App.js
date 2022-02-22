@@ -1,10 +1,16 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Hompage from './pages/hompage';
+import Homepage from './pages/hompage';
 
 function App() {
   return (
     <div className="App">
-      <Hompage/>
+      {/* updated Routes instead of switch */}
+      <Routes>
+        {/* used element instead of component */}
+        <Route exact path='/' element={<Homepage/>} />
+      </Routes>
     </div>
   );
 }
