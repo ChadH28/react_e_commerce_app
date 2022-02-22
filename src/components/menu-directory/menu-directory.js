@@ -1,6 +1,6 @@
 import React from 'react';
-import './menu-directoy.scss';
-import MenuItem from '../menu-item/menu-item'
+import './menu-directory.scss';
+import MenuItem from '../menu-item/menu-item';
 
 // class based component to store the state values of menu items passed
   // always note:
@@ -54,9 +54,15 @@ class Directory extends React.Component {
             ({
               title,
               imageUrl,
-              id
+              id,
+              size
             }) => (
-              <MenuItem key={id} title={title}/>
+              <MenuItem 
+                key={id} 
+                imageUrl={imageUrl} 
+                title={title}
+                size={size}
+              />
             )
           )
         }
