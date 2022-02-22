@@ -1,7 +1,7 @@
 import React from 'react';
 import './menu-item.scss';
 
-
+// Functional component
 const MenuItem = ({title}) => (
 
       <div className='menu-item'>
