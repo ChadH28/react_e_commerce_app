@@ -3,3 +3,7 @@
 body {
   font-family: 'Open Sans Condensed'
 }
+
+.section{
+  margin-top: 50px; /* Add a top margin to avoid content overlay */
+}
