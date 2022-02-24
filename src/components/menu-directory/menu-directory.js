@@ -1,7 +1,7 @@
 import React from 'react';
 import './menu-directory.scss';
 import MenuItem from '../menu-item/menu-item';
-import { categories } from '../../data/data';
+import { categories } from '../../data/categories.data';
 
 // class based component to store the state values of menu items passed
   // always note:
@@ -25,16 +25,18 @@ class Directory extends React.Component {
           this.state.categories.map(
             // destructuring values off category list of data 
             ({
-              title,
-              imageUrl,
               id,
-              size
+              ...otherCategoryProps
+              // title,
+              // imageUrl,
+              // size
             }) => (
               <MenuItem 
                 key={id} 
-                imageUrl={imageUrl} 
-                title={title}
-                size={size}
+                {...otherCategoryProps}
+                // imageUrl={imageUrl} 
+                // title={title}
+                // size={size}
               />
             )
           )
