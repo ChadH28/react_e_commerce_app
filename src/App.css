@@ -1,9 +1,10 @@
 @import url('//fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
 body {
-  font-family: 'Open Sans Condensed'
+  font-family: 'Open Sans Condensed';
 }
 
 .section{
   margin-top: 50px; /* Add a top margin to avoid content overlay */
+  padding: 20px 80px;
 }

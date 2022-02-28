@@ -11,10 +11,13 @@ const Navbar = () =>{
       <Link to="/shop">Shop</Link>
     </li>
     <li>
-      <Link to="/sheeps">Sheeps</Link>
+      <Link to="/contact">Contact</Link>
     </li>
     <li>
-      <Link to="/goats">Goats</Link>
+      <Link to="/sign_in">Sign In</Link>
+    </li>
+    <li>
+      <Link to="/cart">Cart</Link>
     </li>
   </div>
   );
