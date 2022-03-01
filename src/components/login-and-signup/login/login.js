@@ -4,29 +4,29 @@ import React from 'react';
 import './login.scss';
 
 // Class based component to store the state of what the user is typing in 
-  // the state will in this case be form inputs
-class SignIn extends React.Component {
+// the state will in this case be form inputs
+class Login extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
-      password: ''
+      email: null,
+      password: null
     };
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
 
-    this.setState({ 
-      email: '',
-      password: '' 
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({
+      email: null,
+      password: null
     });
   };
 
-  handleChange = event => {
-    const { value, name } = event.target;
-
+  handleChange = e => {
+    const { value, name } = e.target;
     this.setState({ [name]: value });
   };
 
@@ -37,15 +37,16 @@ class SignIn extends React.Component {
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
-          <FormInput
+          <input
             name='email'
             type='email'
-            handleChange={this.handleChange}
             value={this.state.email}
+            handleChange={this.handleChange}
             label='email'
             required
           />
-          <FormInput
+
+          <input
             name='password'
             type='password'
             value={this.state.password}
@@ -53,11 +54,12 @@ class SignIn extends React.Component {
             label='password'
             required
           />
-          <CustomButton type='submit'> Sign in </CustomButton>
+          
+          <button type='submit' value='sign in'> Sign in </button>
         </form>
       </div>
     );
   }
 }
 
-export default SignIn;
+export default Login;
