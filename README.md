@@ -1,3 +1,28 @@
+# The React app - Ecommerce
+## Components
+- collection item
+- collection preview
+- menu cataloge
+- menu item
+- navbar
+
+## Reusable Components
+- buttons
+- form-inputs
+
+## Pages
+- 404
+- home
+- shopping
+- cart
+- authentication
+
+## Mock Data
+- item categories
+- item collection
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
