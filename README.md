@@ -1,8 +1,8 @@
 # The React app - Ecommerce
 ## Components
 - collection item
-- collection preview
-- menu cataloge
+- collection preview (class based)
+- menu cataloge (class based)
 - menu item
 - navbar
 
