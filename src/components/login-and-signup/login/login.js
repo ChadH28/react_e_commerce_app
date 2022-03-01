@@ -27,6 +27,7 @@ class Login extends React.Component {
 
   handleChange = e => {
     const { value, name } = e.target;
+    // dynamically setting the property value to the input name
     this.setState({ [name]: value });
   };
 
@@ -54,7 +55,7 @@ class Login extends React.Component {
             label='password'
             required
           />
-          
+
           <button type='submit' value='sign in'> Sign in </button>
         </form>
       </div>
