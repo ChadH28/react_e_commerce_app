@@ -1,4 +1,5 @@
 # The React app - Ecommerce
+
 ## Components
 - collection item
 - collection preview (class based)
