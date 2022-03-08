@@ -2,6 +2,7 @@ import React from 'react';
 import FormInput from '../../form-input/form-input';
 import Button from '../../button/button';
 import './login.scss';
+import { signInWithGoogle } from '../../../firebase/firebase.utils'
 
 // Class based component to store the state of what the user is typing in 
 // the state will in this case be form inputs
