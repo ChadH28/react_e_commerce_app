@@ -1,7 +1,11 @@
 import React from 'react';
 import './navbar.scss';
 import { Link } from "react-router-dom";
-const Navbar = () => {
+import { auth } from '../../firebase/firebase.utils';
+
+
+// destructuring currrent user prop
+const Navbar = ({ currentUser }) => {
   return (
     <div className="navbar">
       <div className='logo-container'>
@@ -17,9 +21,15 @@ const Navbar = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
-          <Link to="/auth">Sign In</Link>
-        </li>
+        {
+          currentUser ?
+          <li onClick={() => auth.signOut()}>
+            <div>Sign out</div>
+          </li> :
+          <li>
+            <Link to="/auth">Sign In</Link>
+          </li>
+        }
         <li>
           <Link to="/cart">Cart</Link>
         </li>

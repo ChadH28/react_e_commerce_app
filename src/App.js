@@ -28,7 +28,7 @@ class App extends React.Component {
       }
     )
   }
-
+  // function to sign out
   componentWillUnmount() {
     this.unsubscribeFromAuth()
   }
@@ -36,7 +36,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navbar/>
+        {/* passing the state of the user: whether logged in or not */}
+        <Navbar currentUser={this.state.currentUser} />
         {/* updated Routes instead of switch */}
         <div className='section'>
         <Routes>
