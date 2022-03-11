@@ -8,6 +8,7 @@
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  
 
   &:hover {
     cursor: pointer;
@@ -52,13 +53,26 @@
     background-color: white;
     opacity: 0.7;
     position: absolute;
+    text-decoration: none;
+
+    &:after {
+      text-decoration: none;
+    }
+
 
     .title {
       font-weight: bold;
+      text-decoration: none;
       margin: 0 6px 0;
       font-size: 22px;
       color: #4a4a4a;
+      
+      &:after {
+        text-decoration: none;
+      }
     }
+
+
 
     .subt {
       font-weight: lighter;

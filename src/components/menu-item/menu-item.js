@@ -15,8 +15,8 @@ const MenuItem = ({
   <div className={`${size} menu-item`} onClick={() => history.push(`${linkUrl}`)} >
     <div className='background-image' style={{ backgroundImage: `url(${imageUrl})`}}></div>
     <div className='content'>
-      <Link to={'/'+ linkUrl}>
-      <h1 className='title'>{title.toUpperCase()}</h1>
+      <Link style={{textDecoration: "none" }} to={'/'+ linkUrl}>
+        <h1 className='title'>{title.toUpperCase()}</h1>
       </Link>
       <span className='subt'>SHOP NOW</span>
     </div>
