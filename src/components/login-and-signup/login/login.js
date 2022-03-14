@@ -3,6 +3,7 @@ import FormInput from '../../form-input/form-input';
 import Button from '../../button/button';
 import './login.scss';
 import { signInWithGoogle } from '../../../firebase/firebase.googleAuth'
+import { auth } from '../../../firebase/firebase.utils';
 
 // Class based component to store the state of what the user is typing in 
 // the state will in this case be form inputs
@@ -16,12 +17,29 @@ class Login extends React.Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    this.setState({
-      email: "",
-      password: ""
-    });
+
+    const {
+      email,
+      password
+    } = this.state
+
+    try {
+
+      await auth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+
+      this.setState({
+        email: "",
+        password: ""
+      });
+
+    } catch (error) {
+      console.error(error)
+    }
   };
 
   handleChange = e => {
