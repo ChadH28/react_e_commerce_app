@@ -4,11 +4,11 @@ import firebase from 'firebase/compat/app'; //v9
 //to use auth
 // import 'firebase/auth'; //older version
 import 'firebase/compat/auth'; //v9
-//to use firestore
-// import 'firebase/firestore'; //Older Version
+// //to use firestore
+// // import 'firebase/firestore'; //Older Version
 import 'firebase/compat/firestore'; //v9
 
-
+// firebase config for app provided when creating app on  firebase
 const firebaseConfig = {
   apiKey: "AIzaSyA0bwmC14XNKuPUX18RmBFVO8libTvUxlw",
   authDomain: "clothing-e-commerce-85cba.firebaseapp.com",
@@ -23,10 +23,5 @@ firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-
-const provider = new firebase.auth.GoogleAuthProvider();
-// always trigger google popup for authentication
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
