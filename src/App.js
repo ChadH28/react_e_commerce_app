@@ -22,10 +22,38 @@ class App extends React.Component {
 
   componentDidMount() {
     auth.onAuthStateChanged(
-      async user => {
-        // this.setState({currentUser: user})
-        createUserProfileDoc(user);
-        console.log(user)
+      async userAuth => {
+
+        if (userAuth) {
+          const userRef = await createUserProfileDoc(userAuth)
+          // documentSnapshot object allows to check if document exists within the collection
+          userRef.onSnapshot(
+            snapShot => {
+              // can get properties from objects calling the .data() method whixh returns a JSON object of the doc
+              // console.log(snapshot.data())
+
+              // setting state of the logged in user
+              this.setState(
+                {
+                  currentUser: {
+                    id: snapShot.id,
+                    ...snapShot.data()
+                  }
+                },
+                // running a second function until state finshes its cyle 
+                () => {
+                  console.log(this.state)
+                }
+              )
+            }         
+          )
+        }
+        else {
+          this.setState({currentUser: userAuth})
+        }
+        // console.log(user)
+        
+        
         // alert('Hello ' + user.displayName)
       }
     )

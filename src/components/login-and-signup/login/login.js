@@ -2,7 +2,7 @@ import React from 'react';
 import FormInput from '../../form-input/form-input';
 import Button from '../../button/button';
 import './login.scss';
-import {signInWithGoogle } from '../../../firebase/firebase.googleAuth'
+import { signInWithGoogle } from '../../../firebase/firebase.googleAuth'
 
 // Class based component to store the state of what the user is typing in 
 // the state will in this case be form inputs
@@ -15,8 +15,6 @@ class Login extends React.Component {
       password: ""
     };
   }
-
-
 
   handleSubmit = e => {
     e.preventDefault();
@@ -33,6 +31,12 @@ class Login extends React.Component {
   };
 
   render() {
+
+    const {
+      email,
+      password
+    } = this.state
+
     return (
       <div className='login'>
         <h2>I already have an account</h2>
@@ -42,7 +46,7 @@ class Login extends React.Component {
           <FormInput
             name='email'
             type='email'
-            value={this.state.email}
+            value={email}
             handleChange={this.handleChange}
             label='Email'
             required
@@ -51,7 +55,7 @@ class Login extends React.Component {
           <FormInput
             name='password'
             type='password'
-            value={this.state.password}
+            value={password}
             handleChange={this.handleChange}
             label='Password'
             required
