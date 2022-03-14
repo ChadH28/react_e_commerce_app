@@ -22,7 +22,7 @@
 - item categories
 - item collection
 
-
+## Redux
 
 # Getting Started with Create React App
 
