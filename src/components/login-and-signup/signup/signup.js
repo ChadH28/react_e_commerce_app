@@ -22,6 +22,7 @@ class SignUp extends React.Component {
 
   handleSubmit = async e => {
     e.preventDefault();
+
     const {
       displayName,
       email,
@@ -52,6 +53,9 @@ class SignUp extends React.Component {
         password: "",
         confirmPassword: ""
       });
+
+      alert('User added sucessfully')
+      
     } catch (error) {
       console.error(error);
     }

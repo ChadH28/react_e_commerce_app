@@ -42,7 +42,8 @@ class App extends React.Component {
                 },
                 // running a second function until state finshes its cyle 
                 () => {
-                  console.log(this.state)
+                  // console.log(this.state)
+                  alert('Logging in...')
                 }
               )
             }         
