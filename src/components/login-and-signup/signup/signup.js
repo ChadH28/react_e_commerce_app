@@ -1,6 +1,7 @@
 import React from 'react';
 import FormInput from '../../form-input/form-input';
 import Button from '../../button/button';
+// When calling auth. The sign-in provider method for Email/Password under Authentication must be added and enambled 
 import { auth } from '../../../firebase/firebase.utils';
 import { createUserProfileDoc } from '../../../firebase/firebase.createUser';
 import './signup.scss';
