@@ -7,6 +7,7 @@ import ShopPage from './pages/shop/shop-page';
 import NotFound from './pages/404/404-page';
 import AuthPage from './pages/auth/login-and-signup';
 import {auth}  from './firebase/firebase.utils'
+import { createUserProfileDoc } from './firebase/firebase.createUser';
 
 class App extends React.Component {
   constructor() {
@@ -21,10 +22,11 @@ class App extends React.Component {
 
   componentDidMount() {
     auth.onAuthStateChanged(
-      user => {
-        this.setState({currentUser: user})
-        // console.log(user.displayName)
-        alert('Hello ' + user.displayName)
+      async user => {
+        // this.setState({currentUser: user})
+        createUserProfileDoc(user);
+        console.log(user)
+        // alert('Hello ' + user.displayName)
       }
     )
   }
