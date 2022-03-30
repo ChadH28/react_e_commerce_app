@@ -24,7 +24,10 @@ const Navbar = ({ currentUser }) => {
         </li>
         {
           currentUser ?
-          <li onClick={() => auth.signOut(alert('Logging out...')) }>
+          <li onClick={() => {
+            auth.signOut(); 
+            alert('logging out...');
+          }}>
             <div>Sign out</div>
           </li> :
           <li>

@@ -20,13 +20,10 @@ class App extends React.Component {
   //     currentUser: null
   //   }
   // }
-
-  // destructuring user object
-
-
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const {setCurrentUser} = this.props
     this.unsubscribeFromAuth = auth.onAuthStateChanged(
       async userAuth => {
         if (userAuth) {
@@ -51,9 +48,7 @@ class App extends React.Component {
               //     alert('Logging in...')
               //   }
               // )
-
-              const {setCurrentUser} = this.props
-
+              
               setCurrentUser(
                 {
                   id: snapShot.id,
@@ -61,7 +56,6 @@ class App extends React.Component {
                 },
                 // running a second function until state finshes its cyle 
                 () => {
-                  // console.log(this.state)
                   alert('Logging in...')
                 }
               )
