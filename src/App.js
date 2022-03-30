@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+// redirect is changed to navigate in new router verson
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar/navbar';
 import Homepage from './pages/home/homepage';
@@ -87,7 +88,8 @@ class App extends React.Component {
             {/* used element instead of component */}
             <Route exact path='/' element={<Homepage />} />
             <Route exact path='/shop' element={<ShopPage />} />
-            <Route exact path='/auth' element={<AuthPage />} />
+            {/* <Route exact path='/auth' element={<AuthPage />} /> */}
+            <Route exact path='/auth' element={this.props.currentUser ? (<Navigate to='/' />) : (<AuthPage />)} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
@@ -96,6 +98,11 @@ class App extends React.Component {
   }
 }
 
+
+const mapStateToProps = ({user}) => ({
+  currentUser: user.currentUser
+})
+
 // this function dispatches whatever prop of the action passed in redux
 const mapDispatchToProps = dispatch => ({
   // dispatch method takes whatever action set within the app to return the object payload
@@ -103,4 +110,4 @@ const mapDispatchToProps = dispatch => ({
 })
 
 // dont need state to props within the main app only within its components
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
