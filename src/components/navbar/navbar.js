@@ -2,6 +2,7 @@ import React from 'react';
 import './navbar.scss';
 import { Link } from "react-router-dom";
 import { auth } from '../../firebase/firebase.utils';
+import { connect } from 'react-redux';
 
 
 // destructuring currrent user prop
@@ -37,4 +38,5 @@ const Navbar = ({ currentUser }) => {
     </div>
   );
 }
-export default Navbar;
+
+export default connect()(Navbar);
