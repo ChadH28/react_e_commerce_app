@@ -1,6 +1,6 @@
 import React from 'react';
 import './collection-item.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 // Functional component
 const CollectionItem = ({ 

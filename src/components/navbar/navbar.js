@@ -39,4 +39,10 @@ const Navbar = ({ currentUser }) => {
   );
 }
 
-export default connect()(Navbar);
+
+const mapStateToProps = state => ({
+  // equal to your state.valueobject.propvalue
+  currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Navbar);
