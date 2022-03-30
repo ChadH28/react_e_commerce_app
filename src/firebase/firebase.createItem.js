@@ -1,33 +1,36 @@
 import { firestore } from "./firebase.utils";
 
-export const createUserProfileDoc = async (userAuth, additionalData) => {
-  if (!userAuth) return;
+export const createItemDoc = async (createdItem, additionalData) => {
+  if (!createdItem) return;
 
   // console.log(firestore.doc('users/128dfssab'))
-  const userRef = firestore.doc(`users/${userAuth.uid}`)
-
-  const snapShot = await userRef.get();
-  // snapshot represents data brought in from firebase and thiss call is essentially getting a reference by userID to check if user is in the database or not
+  const itemRef = firestore.doc(`items/${createdItem.uid}`)
+  const snapShot = await itemRef.get();
+  // snapshot represents data brought in from firebase
   console.log(snapShot)
   // so if theres no snapShot that doesnt exist in db. A user will then be created and added into the db if signed in with google before
   if (!snapShot.exists) {
-    const {displayName, email} = userAuth;
+    const {
+      item_name,
+      imageUrl,
+      price
+    } = createdItem;
     const createdAt = new Date();
 
     try {
       // creating user object to be set in users collection in database
       // no passwords gets saved to db cause google Auth takes care of that
-      await userRef.set({
+      await itemRef.set({
         displayName,
         email,
         createdAt,
         ...additionalData
       })
     } catch (error) {
-      console.log('error creating user', error.message)
+      console.log('error creating item', error.message)
     }
   }
-  return userRef;
+  return itemRef;
 } 
 
 // CRUD functionality script methods for firebase
