@@ -1,5 +1,25 @@
 # The React app - Ecommerce
 
+## Breakdown
+
+### Admin
+- to view and manage new items
+- to view user info and transactions
+- to log in to a dashboard
+
+### user
+- to buy and view items
+- adding items to cart
+- paying
+- to log in to buy things
+- to add more items in cart if possible
+
+### app
+- navigate users to items and a certain item
+- redirect user to proper pages and if it doesnt exist, give 404 not found
+- authenticate and verify user and admin or just casual viewer
+
+
 ## Components
 - collection item
 - collection preview (class based)
@@ -23,12 +43,14 @@
 - item collection
 
 ## Redux
+user state
+item state
 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripts for the React app
 
 In the project directory, you can run:
 
