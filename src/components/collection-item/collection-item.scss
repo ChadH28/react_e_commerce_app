@@ -4,7 +4,8 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
-
+  position: relative;
+  
   .image {
     width: 100%;
     height: 95%;
@@ -19,14 +20,42 @@
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+    margin-bottom: 15px;
+    
 
     .name {
       width: 90%;
       margin-bottom: 15px;
+      padding: 5px;
     }
 
     .price {
       width: 10%;
+      padding: 5px;
     }
   }
+
+  .custom-button {
+    width: 80%;
+    opacity: 0.7;
+    margin: auto;
+    position: absolute;
+    top: 255px;
+    display: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  &:hover{
+    .image{
+      opacity: .8;
+    }
+    .custom-button{
+      opacity: .85;
+      display: block; 
+    }
+
+  }
+}
+.collection-item:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
